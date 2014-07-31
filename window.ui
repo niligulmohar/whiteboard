@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk+" version="3.12"/>
+  <object class="GtkApplicationWindow" id="appwindow">
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">Potatis</property>
+    <property name="window_position">center</property>
+    <child type="titlebar">
+      <object class="GtkHeaderBar" id="header">
+        <property name="title">Potatis</property>
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="show_close_button">True</property>
+        <child>
+          <object class="GtkToolButton" id="clear_button">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="action_name">app.clear</property>
+            <property name="label" translatable="yes">Undo</property>
+            <property name="use_underline">True</property>
+            <property name="stock_id">gtk-clear</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToolButton" id="undo_button">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="action_name">app.undo</property>
+            <property name="label" translatable="yes">Undo</property>
+            <property name="use_underline">True</property>
+            <property name="stock_id">gtk-undo</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToolButton" id="redo_button">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="action_name">app.redo</property>
+            <property name="label" translatable="yes">Redo</property>
+            <property name="use_underline">True</property>
+            <property name="stock_id">gtk-redo</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkDrawingArea" id="drawingarea">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+      </object>
+    </child>
+  </object>
+</interface>

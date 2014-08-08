@@ -10,11 +10,6 @@ from gi.repository import Gtk, Gdk, Gio
 import canvas
 
 
-def debugger():
-    from IPython.core.debugger import Tracer
-    Tracer()()
-
-
 class SketchApp(object):
     def __init__(self):
         self.app = Gtk.Application()

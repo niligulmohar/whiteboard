@@ -43,7 +43,7 @@ if __name__ == '__main__':
                             DBUS_INTERFACE_SERVER)
     raw_service_type_browser = server.ServiceBrowserNew(IF_UNSPEC,
                                                         PROTO_UNSPEC,
-                                                        '_workstation._tcp',
+                                                        '_potatis._tcp',
                                                         'local',
                                                         dbus.UInt32(0))
     service_type_browser = dbus.Interface(

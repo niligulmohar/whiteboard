@@ -2,3 +2,7 @@ __pycache__
 /persisted_sketch.json
 \#*#
 *~
+*.gir
+*.typelib
+*.so
+*.vapi

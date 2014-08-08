@@ -4,7 +4,8 @@ import whiteboard
 
 
 def on_update(whiteboards):
-    print(whiteboards)
+    if len(whiteboards) > 0:
+        list(whiteboards.values())[0].connect()
 
 
 if __name__ == '__main__':

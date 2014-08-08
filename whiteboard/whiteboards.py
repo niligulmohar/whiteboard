@@ -1,7 +1,7 @@
 import dbus
 from dbus.mainloop.glib import DBusGMainLoop
 
-from .whiteboard import Whiteboard
+from .localwhiteboard import LocalWhiteboard
 from .remotewhiteboard import RemoteWhiteboard
 
 AVAHI_DBUS_NAME = 'org.freedesktop.Avahi'
@@ -63,8 +63,9 @@ class Whiteboards(object):
                             port,
                             txt,
                             flags):
-        discovery = RemoteWhiteboard(name, address)
+        discovery = RemoteWhiteboard(name, address, port)
         self.discovered_whiteboards[str(name)] = discovery
+        print(txt)
         self.notify_subscribers()
 
     def on_error(self, *args):
@@ -156,7 +157,7 @@ class Whiteboards(object):
                 '',
                 '',
                 4711,
-                []
+                [b'public-key=' + whiteboard.public_key.encode()]
             )
 
     def reset_services(self):
@@ -166,4 +167,4 @@ class Whiteboards(object):
         self.entry_group.Commit()
 
     def new_whiteboard(self, name):
-        return Whiteboard(self, name)
+        return LocalWhiteboard(self, name)
